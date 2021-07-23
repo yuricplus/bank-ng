@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ComponentModule } from '../shared/components/components.module';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ComponentModule } from '../shared/components/components.module';
     HttpClientModule,
     ComponentModule
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule, CurrencyPipe],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA, 

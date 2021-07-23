@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { UserInterface } from '../../interface/user'
 
 @Component({
@@ -10,8 +10,14 @@ export class CardUserComponent implements OnInit {
 
   @Input() user: UserInterface;
 
+  @Output() paymentUser: EventEmitter<void> = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit(): void {}
+
+  payUser(userInfo: any):void {
+    this.paymentUser.emit(userInfo);
+  }
 
 }

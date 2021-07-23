@@ -1,16 +1,16 @@
 <div class="user">
-  <img [src]="user.img" [alt]="user.name"/>
+  <img *ngIf="user" [src]="user.img" [alt]="user.name"/>
   <div class="info-wrapper">
     <div class="user-name">
       {{user.name}}
     </div>
 
     <div class="user-id-username">
-      ID: {{user.id}} - Username: {{user.userName}}
+      ID: {{user.id}} - Username: {{user.username}}
     </div>
   </div>
 
-  <button type="button" class="pay-button">
+  <button type="button" class="pay-button" (click)="payUser(user)">
     Pagar
   </button>
 </div>
