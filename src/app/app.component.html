@@ -1,6 +1,15 @@
+<span class="text-title">picpay-desafio-frontend app is running!</span>
 <div class="users">
   <div *ngFor="let item of users">
-    <app-card-user [user]="item"></app-card-user>
+    <app-card-user [user]="item" (paymentUser)="openModal($event)"></app-card-user>
   </div>
+  <app-modal 
+    [modalOpened]="modalOpened" 
+    [userToPay]="userToPay" 
+    [paymentComplete]="paymentComplete"
+    (closeModal)="closeModal()"
+    (payUser)="seendPaymentToUser($event)"
+    [paymentSuccess]="paymenteSuccess"
+    ></app-modal>
 </div>
 
