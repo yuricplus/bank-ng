@@ -1,4 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -7,6 +9,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [HttpClientModule],
+      providers: [HttpClientModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -16,16 +21,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'picpay-desafio-frontend'`, () => {
+  it(`Desafio Picpay Front-end || Yuri Martins`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('picpay-desafio-frontend');
+    expect(app.title).toEqual('Desafio Picpay Front-end || Yuri Martins');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('picpay-desafio-frontend app is running!');
+    expect(compiled.querySelector('.text-title').textContent).toContain('picpay-desafio-frontend app is running!');
   });
 });
